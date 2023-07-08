@@ -14,7 +14,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   Widget build(context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(children: [
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
         const Text('The question...'),
         const SizedBox(height: 30),
         ElevatedButton(onPressed: () {}, child: const Text('Answer 1')),
