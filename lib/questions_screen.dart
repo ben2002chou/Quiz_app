@@ -22,11 +22,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           ),
         ),
         const SizedBox(height: 30),
-        AnswerButton('Answer 1', () {}),
-        AnswerButton('Answer 2', () {}),
-        AnswerButton('Answer 3', () {}),
-        AnswerButton('Answer 4', () {}),
-        
+        AnswerButton(answerText: 'Answer 1', onTap: () {}),
+        AnswerButton(answerText: 'Answer 2', onTap: () {}),
+        AnswerButton(answerText: 'Answer 3', onTap: () {}),
+        AnswerButton(answerText: 'Answer 4', onTap: () {}),
       ]),
     );
   }
