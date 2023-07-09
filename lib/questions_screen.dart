@@ -15,14 +15,16 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
   void answerQuestion() {
+    print('Answer chosen!');
     setState(() {
-      currentQuestionIndex++;
+      currentQuestionIndex++; // increments value by one
     });
   }
 
   @override
   Widget build(context) {
     final currentQuestion = questions[currentQuestionIndex];
+
     return SizedBox(
       width: double.infinity,
       child: Container(
