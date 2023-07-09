@@ -16,12 +16,11 @@ const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
 class _QuizState extends State<Quiz> {
-
   List<String> selectedAnswers = []; // Adding to existing list of values
 
   var activeScreen = 'start-screen';
   // Widget? activeScreen; // initially it is techincally null
- 
+
   // void initState() {
   //   activeScreen = StartScreen(switchScreen);
   //   super.initState();
@@ -34,10 +33,11 @@ class _QuizState extends State<Quiz> {
 
   void chooseAnswer(String answer) {
     setState(() {
-      selectedAnswers.add(answer);
-      
-      if(selectedAnswers.length == questions.length) {
-        // selectedAnswers.clear();
+      if (selectedAnswers.length < questions.length) {
+        selectedAnswers.add(answer);
+      }
+
+      if (selectedAnswers.length == questions.length) {
         activeScreen = 'results-screen';
       }
     });
@@ -51,11 +51,15 @@ class _QuizState extends State<Quiz> {
     Widget screenWidget = StartScreen(switchScreen);
 
     if (activeScreen == 'questions-screen') {
-      screenWidget = QuestionsScreen(onSelectAnswer: chooseAnswer);
+      screenWidget = QuestionsScreen(
+        onSelectAnswer: chooseAnswer,
+      );
     }
 
     if (activeScreen == 'results-screen') {
-      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers,);
+      screenWidget = ResultsScreen(
+        chosenAnswers: selectedAnswers,
+      );
     }
 
     return MaterialApp(
