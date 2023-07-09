@@ -25,12 +25,21 @@ class SummaryItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start, // align to top of the row
           children: [
             Text(itemData['question'] as String, style: GoogleFonts.lato(
-              textStyle: const TextStyle(
+                color: Colors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(
+              height: 5,
             ),
+            Text(itemData['user_answer'] as String, style: const TextStyle(
+              color: Color.fromARGB(255, 246, 222, 249),
+            ),),
+            Text(itemData['correct_answer'] as String, style: const TextStyle(
+              color: Color.fromARGB(255, 216, 246, 248),
+            ),),
+            
           ],
         ),)
 
