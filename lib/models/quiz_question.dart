@@ -5,7 +5,7 @@ class QuizQuestion {
   final List<String> answers;
 
   List<String> getShuffledAnswers() {
-    final shuffledList = List.of(answers); // final stop reassignment but not actions like shuffle
+    final shuffledList = List.of(answers); // final stops reassignment but not actions like shuffle
     shuffledList.shuffle();
     return shuffledList;
   }
