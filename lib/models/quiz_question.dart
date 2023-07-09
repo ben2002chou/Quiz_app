@@ -3,4 +3,10 @@ class QuizQuestion {
 
   final String text;
   final List<String> answers;
+
+  List<String> getShuffledAnswers() {
+    final shuffledList = List.of(answers); // final stop reassignment but not actions like shuffle
+    shuffledList.shuffle();
+    return shuffledList;
+  }
 }
